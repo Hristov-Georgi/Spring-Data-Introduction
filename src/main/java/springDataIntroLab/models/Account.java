@@ -15,13 +15,12 @@ public class Account {
     @Column(nullable = false)
     private BigDecimal balance;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     private User user;
 
     public Account(){}
 
-    public Account(long id, BigDecimal balance) {
-        this.id = id;
+    public Account(BigDecimal balance) {
         this.balance = balance;
     }
 
