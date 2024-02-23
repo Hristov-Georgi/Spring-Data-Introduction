@@ -1,6 +1,7 @@
 package SpringDataIntroExercise_01.entities;
 
 import javax.persistence.*;
+import java.util.Collections;
 import java.util.Set;
 
 @Entity
@@ -52,5 +53,13 @@ public class Author {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Set<Book> getBooks() {
+        return Collections.unmodifiableSet(books);
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 }
